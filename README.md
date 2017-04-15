@@ -15,11 +15,13 @@ The code used for this is included in [Code_Serial.py](https://github.com/jdmaas
 
 
 ### OpenMP parallalization
+OpenMP parallalization is implented using Cython. The inner loops of the learning algorithms are parallalized using nogil pranges that  use static scheduling. By just parallalizing the inner loops using OpenMP, the outer loops can later be parallalized using MPI. The code is compiled using GCC (5.2.0) and benchmarked for different numbers of cores. We find that using Cython with just one thread (so no parallalization) already gives a large speedup compared to the regular serial code. For all problem sizes, we find speedups around 66 compared to the serial code. This speedup is due to ability of Cython to run in c. The figure below shows runtimes for different problem sizes (number of samples) and different cores.
 
-The prange loops currently use static scheduling. 
-
-The used Python script is [Code_Serial.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_OpenMP.py) together with Cython module [train_ml_prange.pyx](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/train_ml_prange.pyx).
 ![OpenMP-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Runtime_OpenMP.png)
+
+The Figure shows lower runtimes for an increasing number of cores. The Figure below shows the associaed speedup and scaled speedup using $n = 1000$ as the base case. 
+The used Python script is [Code_OpenMP.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_OpenMP.py) together with Cython module [train_ml_prange.pyx](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/train_ml_prange.pyx).
+
 ![OpenMP-Speedups](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Speedup_OpenMP.png)
 
 ### OpenMP + MPI parallalization
