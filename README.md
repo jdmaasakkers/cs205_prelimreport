@@ -17,7 +17,7 @@ We first benchmark the serial implementation on Odyssey for different problem si
 ![Serial-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Sizes_Serial.png)
 
 ### OpenMP parallelization
-OpenMP parallelization is implemented using Cython. The inner loops of the learning algorithms are parallelized using nogil pranges that  use static scheduling. By just parallelizing the inner loops using OpenMP, the outer loops can later be parallelized using MPI. The code is compiled using GCC (5.2.0) and benchmarked for different numbers of cores. We find that using Cython with just one thread (so no parallelization) already gives a large speedup compared to the regular serial code. For all problem sizes, we find speedups around 66 compared to the serial code. This speedup is due to ability of Cython to run in c. The figure below shows runtimes for different problem sizes (number of samples) and different cores.
+OpenMP parallelization is implemented using Cython. The inner loops of the learning algorithms are parallelized using nogil pranges that  use static scheduling. By just parallelizing the inner loops using OpenMP, the outer loops can later be parallelized using MPI. The code is compiled using GCC (5.2.0) and benchmarked for different numbers of cores. We find that using Cython with just one thread (so no parallelization) already gives a large speedup compared to the regular serial code. For all problem sizes, we find speedups around 66 compared to the serial code. This speedup is due to ability of Cython to run in c. The figure below shows runtimes for different problem sizes (number of samples *n*) and different cores.
 
 ![OpenMP-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Runtime_OpenMP.png)
 
