@@ -1,7 +1,12 @@
 # Parallelized Image Recognition in Spark + MPI
 ## CS205 - Interim progress report
 
-Image recognition is a hot topic in machine learning communities. Our project is to apply statistical learning theory in the Spark framework to classify images. We further aim to optimize the training of our learning algorithm by implementing MPI parallelization. We will explore both model and data parallelization as many examples of labeled images are critical to training an accurate model. We will start with a common dataset of handwritten digits (MNIST), and will set up a framework where custom images can be imported.
+Image recognition is a hot topic in machine learning communities. Our project is to apply statistical learning theory in the OpenMPI and Spark frameworks to classify images. We further aim to optimize the training of our learning algorithm by implementing MPI parallelization. We will explore both model and data parallelization as many examples of labeled images are critical to training an accurate model.
+
+### Learning algorithm
+
+
+The current implementation uses the MNIST database [(LeCun et al. 1998)](http://yann.lecun.com/exdb/mnist/) that consists handwritten digits (0-9). The database includes a training set of 60,000 and a test set of 10,000 each consisting of 28 by 28 pixels. Each pixel has a value between 0 and 255 (white to black). If time permits, we are planning to expand our model to import our own images (see 'Future Work'). 
 
 ### Project Goals
 - Implement both serial, OpenMPI+MPI, and Spark regularized statistical learning algorithms. This will initially take the form of a linear classifier (e.g. 1-layer neural network) with L-2 loss.
