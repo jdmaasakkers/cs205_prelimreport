@@ -9,17 +9,25 @@ Image recognition is a hot topic in machine learning communities. Our project is
 - Build a framework where custom images can be imported.
 
 ### Serial implementation
+
+The code used for this is included in [Code_Serial.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_Serial.py).
 ![Serial-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Sizes_Serial.png)
 
 
 ### OpenMP parallalization
+
+The used Python script is [Code_Serial.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_OpenMP.py) together with Cython module [train_ml_prange.pyx](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/train_ml_prange.pyx).
 ![OpenMP-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Runtime_OpenMP.png)
 ![OpenMP-Speedups](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Speedup_OpenMP.png)
 
 ### OpenMP + MPI parallalization
 
 ### Spark parallalization
+
+The Spark version of the code is [Code_Spark.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_Spark.py).
 ![Spark-Speedups](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Speedup_Spark.png)
+
+Python code used for all the plots is included in the code directory. 
 
 ### Future work
 We will continue work along three different avenues:
