@@ -16,6 +16,8 @@ The code used for this is included in [Code_Serial.py](https://github.com/jdmaas
 
 ### OpenMP parallalization
 
+The prange loops currently use static scheduling. 
+
 The used Python script is [Code_Serial.py](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/Code_OpenMP.py) together with Cython module [train_ml_prange.pyx](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Code/train_ml_prange.pyx).
 ![OpenMP-Runtimes](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Runtime_OpenMP.png)
 ![OpenMP-Speedups](https://github.com/jdmaasakkers/cs205_prelimreport/blob/master/Speedup_OpenMP.png)
@@ -32,5 +34,5 @@ Python code used for all the plots is included in the code directory.
 ### Future work
 We will continue work along three different avenues:
 - Optimize the hybrid parallization using OpenMP + MPI and do a more rigurous benchmark including running on 8 compute nodes on Odyssey.
-- Optimize the Spark parallalization for AWS, implement GPU acceleration, and benchmark for different setups.
+- Optimize the Spark parallalization for AWS, implement GPU acceleration, and benchmark for different setups. We will also add visuals illustrating the workflow. 
 - Build a framework where custom images can be imported into the learning algorithm. 
